@@ -1,13 +1,20 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import Layout from "@/components/Layout";
+import Dashboard from "@/components/Dashboard";
+import Onboarding from "@/components/Onboarding";
 
 const Index = () => {
+  // In a real app, this would come from authentication state
+  const [isAuthenticated] = useState(false);
+
+  if (!isAuthenticated) {
+    return <Onboarding />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <Layout>
+      <Dashboard />
+    </Layout>
   );
 };
 

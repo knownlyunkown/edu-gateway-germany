@@ -8,35 +8,55 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* UNI 360° Design System - Gunmetal Primary with Academic Accents */
+    --background: 210 11% 96%;
+    --foreground: 180 3% 17%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 180 3% 17%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 180 3% 17%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Gunmetal #2C3539 */
+    --primary: 180 3% 19%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Columbia Blue #C4DFF0 */
+    --secondary: 202 56% 85%;
+    --secondary-foreground: 180 3% 19%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones */
+    --muted: 210 11% 93%;
+    --muted-foreground: 180 3% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Tiger's Eye #E08D3C */
+    --accent: 28 69% 56%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Success: Rich Green #228B22 */
+    --success: 120 60% 34%;
+    --success-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Destructive: Alert Red #C0392B */
+    --destructive: 6 63% 46%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    --border: 210 11% 89%;
+    --input: 210 11% 89%;
+    --ring: 180 3% 19%;
+
+    /* Custom gradients for UNI 360° */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(180 3% 25%));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(28 69% 60%));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(202 56% 90%));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(120 60% 40%));
+
+    /* Shadows with brand colors */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-accent: 0 10px 30px -10px hsl(var(--accent) / 0.3);
+    
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
