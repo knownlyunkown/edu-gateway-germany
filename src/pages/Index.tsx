@@ -5,10 +5,14 @@ import Onboarding from "@/components/Onboarding";
 
 const Index = () => {
   // In a real app, this would come from authentication state
-  const [isAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  const handleOnboardingComplete = () => {
+    setIsAuthenticated(true);
+  };
 
   if (!isAuthenticated) {
-    return <Onboarding />;
+    return <Onboarding onComplete={handleOnboardingComplete} />;
   }
 
   return (

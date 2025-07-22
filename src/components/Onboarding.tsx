@@ -8,7 +8,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@/components/ui/badge";
 import { GraduationCap, Upload, ArrowRight, CheckCircle } from "lucide-react";
 
-const Onboarding = () => {
+interface OnboardingProps {
+  onComplete: () => void;
+}
+
+const Onboarding = ({ onComplete }: OnboardingProps) => {
   const [currentStep, setCurrentStep] = useState(1);
   const [authMode, setAuthMode] = useState<"signin" | "signup">("signup");
 
@@ -184,7 +188,12 @@ const Onboarding = () => {
                 </div>
               </div>
 
-              <Button variant="journey" className="w-full" size="lg">
+              <Button 
+                variant="journey" 
+                className="w-full" 
+                size="lg"
+                onClick={onComplete}
+              >
                 Proceed to Dashboard
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
