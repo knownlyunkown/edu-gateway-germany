@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { Bell, MessageCircle, User, Home, FileText, GraduationCap, Plane, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { NavLink } from "react-router-dom";
 
 interface LayoutProps {
   children: ReactNode;
@@ -50,26 +51,71 @@ const Layout = ({ children }: LayoutProps) => {
       <nav className="border-b border-border bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex space-x-8 overflow-x-auto py-3">
-            <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            <NavLink 
+              to="/" 
+              className={({ isActive }) => 
+                `flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive 
+                    ? "bg-primary text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`
+              }
+            >
               <Home className="w-4 h-4" />
               <span>Dashboard</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            </NavLink>
+            <NavLink 
+              to="/documents" 
+              className={({ isActive }) => 
+                `flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive 
+                    ? "bg-primary text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`
+              }
+            >
               <FileText className="w-4 h-4" />
               <span>Documents</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            </NavLink>
+            <NavLink 
+              to="/colleges" 
+              className={({ isActive }) => 
+                `flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive 
+                    ? "bg-primary text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`
+              }
+            >
               <GraduationCap className="w-4 h-4" />
               <span>Colleges</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            </NavLink>
+            <NavLink 
+              to="/visa" 
+              className={({ isActive }) => 
+                `flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive 
+                    ? "bg-primary text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`
+              }
+            >
               <Plane className="w-4 h-4" />
               <span>Visa</span>
-            </Button>
-            <Button variant="ghost" size="sm" className="flex items-center space-x-2">
+            </NavLink>
+            <NavLink 
+              to="/ai-assistant" 
+              className={({ isActive }) => 
+                `flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive 
+                    ? "bg-primary text-primary-foreground" 
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                }`
+              }
+            >
               <Bot className="w-4 h-4" />
               <span>AI Assistant</span>
-            </Button>
+            </NavLink>
           </div>
         </div>
       </nav>
